@@ -1,0 +1,38 @@
+﻿@model List<Contacts.Models.Contact>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contacts</title>
+</head>
+<body>
+    <h1>Welcome to the Contacts App!</h1>
+
+    <!-- Display contacts -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Model)
+            {
+                <tr>
+                    <td>@contact.Name</td>
+                    <td>@contact.PhoneNumber</td>
+                    <td>@contact.Address</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <!-- Link to add contact -->
+        <a href="~/Contacts/Add">Add Contact</a>
+        <!-- Link to delete contact -->
+        <a href="~/Contacts/Delete">Delete Contact</a>
+    </div>
+</body>
+</html>
